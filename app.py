@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-
+"""
 def handle_message(msg):
     return f"u said {msg}"
 
@@ -10,9 +10,13 @@ def chat():
     msg = request.json["message"]
     reply = handle_message(msg)
     return jsonify({"reply": reply})
-
+"""
 
 @app.route("/")
+def signIn():
+    return render_template("signIn.html")
+
+@app.route("/home")
 def home():
     return render_template("home.html")
 
